@@ -17,7 +17,7 @@ code {
   overflow-y: auto;
 }
 
-.column{
+.three.wide.computer.one.wide.mobile.five.wide.tablet.column{
   display: flex !important;
   justify-content: center !important;
 }

@@ -52,3 +52,21 @@ export const fetchHabitats = () => (dispatch:Dispatch) => {
         return ({stat: false, msg: err.response.data.message})
     })
 }
+
+export const fetchPokemonDetail = (url:string) => (dispatch:Dispatch) => {
+    return axios.get(url)
+    .then(resp => {
+        
+        dispatch({
+            type:'SET_POKEMON',
+            data: resp.data,
+        })
+
+        return ({stat: true, msg: resp.data})
+    })
+    .catch(err=>{
+        console.log(err);
+        return ({stat: false, msg: err.response.data.message})
+    })
+}
+
