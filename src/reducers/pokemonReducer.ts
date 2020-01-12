@@ -8,6 +8,7 @@ export interface PokemonStateType{
     pokemonShapes: undefined | Array<any>
     nextUrl: string
     prevUrl: string
+    habitats: undefined | Array<any>
 }
 
 const initialState:PokemonStateType = {
@@ -17,7 +18,8 @@ const initialState:PokemonStateType = {
     pokemonSpecies: undefined,
     pokemonShapes: undefined,
     nextUrl: '',
-    prevUrl:''
+    prevUrl:'',
+    habitats: undefined
 }
 
 
@@ -31,6 +33,8 @@ const pokemonReducer: Reducer = (state = initialState, action) => {
             return { ...state, nextUrl: action.data }
         case 'SET_PREV_POKEMONS':
             return { ...state, prevUrl: action.data }
+        case 'SET_POKEMONS_HABITATS':
+            return { ...state, habitats: action.data }
         default:
             return state
     }

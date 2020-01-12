@@ -27,3 +27,28 @@ export const fetchPokemons = (url = 'https://pokeapi.co/api/v2/pokemon-species')
         return ({stat: false, msg: err.response.data.message})
     })
 }
+
+export const fetchHabitats = () => (dispatch:Dispatch) => {
+    return axios.get(`https://pokeapi.co/api/v2/pokemon-habitat`)
+    .then(resp => {
+
+        let allHabitatsAPI = resp.data.results.map(({url}:{url:string})=>axios.get(url).then(resp=>resp.data))
+
+        return axios.all(allHabitatsAPI)
+        .then(axios.spread((...args) => {
+            let result: any[] =[]
+            args.forEach(x=>{result = result.concat(x)})
+
+            dispatch({
+                type:'SET_POKEMONS_HABITATS',
+                data: result,
+            })
+            
+            return ({stat: true, msg: null})
+        }))
+    })
+    .catch(err=>{
+        console.log(err);
+        return ({stat: false, msg: err.response.data.message})
+    })
+}
