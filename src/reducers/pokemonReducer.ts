@@ -1,6 +1,6 @@
 import { Reducer } from 'redux'
 
-export interface PokemonType{
+export interface PokemonStateType{
     pokemons: undefined | Array<any>
     pokemon: undefined | Array<any>
     pokemonHabitats: undefined | Array<any>
@@ -10,7 +10,7 @@ export interface PokemonType{
     prevUrl: string
 }
 
-const initialState:PokemonType = {
+const initialState:PokemonStateType = {
     pokemons: undefined,
     pokemon: undefined,
     pokemonHabitats: undefined,
