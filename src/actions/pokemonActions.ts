@@ -4,8 +4,7 @@ import { Dispatch } from "redux";
 export const fetchPokemons = (url = 'https://pokeapi.co/api/v2/pokemon-species') => (dispatch:Dispatch) => {
     return axios.get(url)
     .then(resp => {
-        console.log({url,resp});
-        
+
         dispatch({
             type: 'SET_POKEMONS',
             data: resp.data.results,
@@ -21,10 +20,10 @@ export const fetchPokemons = (url = 'https://pokeapi.co/api/v2/pokemon-species')
             data: resp.data.previous,
         })
 
-        return ({resp: true, msg: null})
+        return ({stat: true, msg: null})
     })
     .catch(err=>{
         console.log(err);
-        return ({resp: false, msg: err.response.data.message})
+        return ({stat: false, msg: err.response.data.message})
     })
 }

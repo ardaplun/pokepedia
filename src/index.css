@@ -16,3 +16,8 @@ code {
   height: 100vh;
   overflow-y: auto;
 }
+
+.column{
+  display: flex !important;
+  justify-content: center !important;
+}
