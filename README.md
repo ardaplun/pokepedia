@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) Typescript version.
-Using [Semantic React UI](react.semantic-ui.com) as UI Library. 
+Using [Semantic React UI](https://react.semantic-ui.com) as UI Library. 
 
-This API provided from [PokeAPI](pokeapi.co). Utilize [Redux](redux.js.org) with [Thunk](github.com/reduxjs/redux-thunk) for the global state management.
+This API provided from [PokeAPI](https://pokeapi.co). Utilize [Redux](https://redux.js.org) with [Thunk](https://github.com/reduxjs/redux-thunk) for the global state management.
 
 ## Available Scripts
 
